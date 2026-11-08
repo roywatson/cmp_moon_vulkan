@@ -1,0 +1,8 @@
+# C API of the shared Vulkan renderer for iOS (shared/src/iosMain/native/moon_ios.h).
+# libmoon_ios.a (bridge + renderer core + MoltenVK) is built per target by Gradle and
+# its directory is passed with -libraryPath.
+package = com.roywatson.lunar.native
+headers = moon_ios.h
+headerFilter = moon_ios.h
+staticLibraries = libmoon_ios.a
+linkerOpts = -lc++ -framework Foundation -framework Metal -framework QuartzCore -framework IOSurface -framework CoreGraphics -framework ImageIO -framework UIKit

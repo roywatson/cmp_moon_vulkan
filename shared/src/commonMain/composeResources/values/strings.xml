@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Lunar Vulkan</string>
+
+    <!-- Header. Labels shown in capitals are stored in normal case; the UI upper-cases them, and
+         screen readers read the normal-case text. -->
+    <string name="header_series">Lunar / 01</string>
+    <string name="header_title">Rotatable lunar surface</string>
+    <string name="render_preview">Render preview</string>
+
+    <!-- Globe -->
+    <string name="drag_hint">Drag to orbit</string>
+    <string name="data_credit">NASA LRO lunar surface</string>
+    <!-- Spoken description, e.g. "The Moon, turned 23 degrees west and tilted 8 degrees north". -->
+    <string name="globe_description">The Moon, %1$s and %2$s</string>
+    <plurals name="globe_turned_east">
+        <item quantity="one">turned %1$d degree east</item>
+        <item quantity="other">turned %1$d degrees east</item>
+    </plurals>
+    <plurals name="globe_turned_west">
+        <item quantity="one">turned %1$d degree west</item>
+        <item quantity="other">turned %1$d degrees west</item>
+    </plurals>
+    <plurals name="globe_tilted_north">
+        <item quantity="one">tilted %1$d degree north</item>
+        <item quantity="other">tilted %1$d degrees north</item>
+    </plurals>
+    <plurals name="globe_tilted_south">
+        <item quantity="one">tilted %1$d degree south</item>
+        <item quantity="other">tilted %1$d degrees south</item>
+    </plurals>
+    <string name="action_turn_east">Turn east</string>
+    <string name="action_turn_west">Turn west</string>
+    <string name="action_tilt_north">Tilt north</string>
+    <string name="action_tilt_south">Tilt south</string>
+
+    <!-- Controls -->
+    <string name="control_distance">Distance</string>
+    <string name="control_sun_azimuth">Sun azimuth</string>
+    <string name="control_terrain_detail">Terrain detail</string>
+    <string name="control_relief">Relief</string>
+    <!-- Compose resources substitute %1$d but, unlike Android, do not unescape %%. -->
+    <string name="value_percent">%1$d%</string>
+    <string name="value_degrees_short">%1$d°</string>
+    <plurals name="value_degrees_spoken">
+        <item quantity="one">%1$d degree</item>
+        <item quantity="other">%1$d degrees</item>
+    </plurals>
+    <string name="terrain_low">Low</string>
+    <string name="terrain_balanced">Balanced</string>
+    <string name="terrain_high">High</string>
+
+    <!-- About screen -->
+    <string name="about_open">About this app</string>
+    <string name="about_title">About Lunar Vulkan</string>
+    <string name="about_logo">Roy Watson, Software Development</string>
+    <string name="about_body">Lunar Vulkan is a portfolio app by Roy Watson. I design and build apps for Android, iOS, and desktop with Kotlin and Compose Multiplatform, from polished UI down to native GPU code.</string>
+    <string name="about_invitation">Have a project in mind? Get in touch.</string>
+    <string name="about_phone_label">Phone, voice or text</string>
+    <string name="about_email_label">Email</string>
+    <string name="about_web_label">Web</string>
+    <string name="about_call">Call</string>
+    <string name="about_send_email">Send email</string>
+    <string name="about_open_website">Open website</string>
+    <string name="about_close">Close</string>
+
+    <!-- Renderer failures. Any technical detail is shown beneath, untranslated. -->
+    <string name="renderer_vulkan_failed">Vulkan could not start on this device. A Vulkan-capable graphics driver is required.</string>
+    <string name="renderer_library_failed">The native renderer library could not be loaded.</string>
+    <string name="renderer_textures_failed">The lunar maps could not be loaded.</string>
+</resources>
