@@ -49,4 +49,22 @@ class AboutScreenTest {
             openedUris,
         )
     }
+
+    @Test
+    fun articleLinkOpensTheMediumArticle() = runComposeUiTest {
+        setContent {
+            CompositionLocalProvider(LocalUriHandler provides recordingUriHandler) { App() }
+        }
+        onNode(hasContentDescription("About this app")).performClick()
+
+        onNodeWithText("How Lunar Vulkan is built, on Medium").performClick()
+
+        assertEquals(
+            listOf(
+                "https://medium.com/@rwatson_86305/" +
+                    "lunar-vulkan-one-c-vulkan-renderer-inside-a-compose-multiplatform-app-a84d8e7dc27f",
+            ),
+            openedUris,
+        )
+    }
 }

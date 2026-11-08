@@ -54,6 +54,9 @@
     <string name="about_title">About Lunar Vulkan</string>
     <string name="about_logo">Roy Watson, Software Development</string>
     <string name="about_body">Lunar Vulkan is a portfolio app by Roy Watson. I design and build apps for Android, iOS, and desktop with Kotlin and Compose Multiplatform, from polished UI down to native GPU code.</string>
+    <string name="about_article_label">The article</string>
+    <string name="about_article_title">How Lunar Vulkan is built, on Medium</string>
+    <string name="about_read_article">Read the article</string>
     <string name="about_invitation">Have a project in mind? Get in touch.</string>
     <string name="about_phone_label">Phone, voice or text</string>
     <string name="about_email_label">Email</string>

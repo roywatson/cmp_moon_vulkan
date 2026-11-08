@@ -53,6 +53,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
 import com.roywatson.lunar.resources.Res
+import com.roywatson.lunar.resources.about_article_label
+import com.roywatson.lunar.resources.about_article_title
 import com.roywatson.lunar.resources.about_body
 import com.roywatson.lunar.resources.about_call
 import com.roywatson.lunar.resources.about_close
@@ -62,6 +64,7 @@ import com.roywatson.lunar.resources.about_logo
 import com.roywatson.lunar.resources.about_open
 import com.roywatson.lunar.resources.about_open_website
 import com.roywatson.lunar.resources.about_phone_label
+import com.roywatson.lunar.resources.about_read_article
 import com.roywatson.lunar.resources.about_send_email
 import com.roywatson.lunar.resources.about_title
 import com.roywatson.lunar.resources.about_web_label
@@ -76,6 +79,10 @@ private object Contact {
     const val WEB = "www.roywatson.app"
     const val WEB_URI = "https://$WEB"
 }
+
+/** The companion article on Medium that explains how this app is built. */
+private const val ARTICLE_URI =
+    "https://medium.com/@rwatson_86305/lunar-vulkan-one-c-vulkan-renderer-inside-a-compose-multiplatform-app-a84d8e7dc27f"
 
 /** The header's round "i" button that opens the about screen. */
 @Composable
@@ -163,6 +170,13 @@ private fun AboutCard(onOpenUri: (String) -> Unit, onDismiss: () -> Unit, modifi
             color = LunarColors.Ink,
             style = MaterialTheme.typography.bodyMedium,
         )
+        LinkRow(
+            stringResource(Res.string.about_article_label),
+            stringResource(Res.string.about_article_title),
+            ARTICLE_URI,
+            stringResource(Res.string.about_read_article),
+            onOpenUri,
+        )
         Text(
             stringResource(Res.string.about_invitation),
             color = LunarColors.Ink,
@@ -170,21 +184,21 @@ private fun AboutCard(onOpenUri: (String) -> Unit, onDismiss: () -> Unit, modifi
             fontWeight = FontWeight.SemiBold,
         )
         Column {
-            ContactRow(
+            LinkRow(
                 stringResource(Res.string.about_phone_label),
                 Contact.PHONE,
                 Contact.PHONE_URI,
                 stringResource(Res.string.about_call),
                 onOpenUri,
             )
-            ContactRow(
+            LinkRow(
                 stringResource(Res.string.about_email_label),
                 Contact.EMAIL,
                 Contact.EMAIL_URI,
                 stringResource(Res.string.about_send_email),
                 onOpenUri,
             )
-            ContactRow(
+            LinkRow(
                 stringResource(Res.string.about_web_label),
                 Contact.WEB,
                 Contact.WEB_URI,
@@ -202,9 +216,9 @@ private fun AboutCard(onOpenUri: (String) -> Unit, onDismiss: () -> Unit, modifi
     }
 }
 
-/** A labelled contact detail that opens [uri] (dialer, mail client, or browser) when tapped. */
+/** A labelled contact detail or link that opens [uri] (dialer, mail client, or browser) when tapped. */
 @Composable
-private fun ContactRow(label: String, value: String, uri: String, actionLabel: String, onOpenUri: (String) -> Unit) {
+private fun LinkRow(label: String, value: String, uri: String, actionLabel: String, onOpenUri: (String) -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
