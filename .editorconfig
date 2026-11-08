@@ -1,0 +1,24 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{cpp,h,mm,vert,frag}]
+indent_size = 2
+
+[*.{kt,kts}]
+max_line_length = 120
+# The official Kotlin coding conventions (IntelliJ IDEA / Android Studio defaults).
+ktlint_code_style = intellij_idea
+# Composable functions are nouns in PascalCase by Compose convention.
+ktlint_function_naming_ignore_when_annotated_with = Composable
+# Keep short call chains on one line; the line-length limit still wraps long ones.
+ktlint_standard_chain-method-continuation = disabled
+
+[*.md]
+trim_trailing_whitespace = false
